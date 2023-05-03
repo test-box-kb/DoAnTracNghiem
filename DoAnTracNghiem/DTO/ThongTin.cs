@@ -31,6 +31,7 @@ namespace DoAnTracNghiem.DTO
                  users = new Account(item);
                 name = users.Name;
                 ngaysinh = users.Ngaysinh;
+                //kobiet
             }
         }
         public string Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
