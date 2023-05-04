@@ -39,5 +39,14 @@ namespace DoAnTracNghiem.DAO
             }
             return ListUsers;
         }
+        public Account GetThongTinByUserName(string email)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from users where email = '" + email +"'");
+            foreach(DataRow item in data.Rows)
+            {
+                return new Account(item);
+            }
+            return null;
+        }
     }
 }

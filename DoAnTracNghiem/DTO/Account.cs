@@ -9,7 +9,7 @@ namespace DoAnTracNghiem.DTO
 {
     public class Account
     {
-        private int stt;
+        
         private string name;
         private string email;
         private string ngaysinh;
@@ -17,11 +17,11 @@ namespace DoAnTracNghiem.DTO
         public Account() { }
         public Account(DataRow row)
         {
-            stt = (int)row["stt"];
+            
             name = row["name"].ToString();
             email = row["email"].ToString();
-            ngaysinh = row["date"].ToString();
-            chucvu = row["ChucVu"].ToString();
+            ngaysinh = row["ngaysinh"].ToString();
+            chucvu = row["ChucVu"].ToString();  
         }
         public Account(string name, string email, string ngaysinh,  string chucvu) 
         {

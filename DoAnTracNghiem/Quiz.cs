@@ -1,4 +1,5 @@
 ﻿using DoAnTracNghiem.DAO;
+using DoAnTracNghiem.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,46 @@ namespace DoAnTracNghiem
 {
     public partial class Home_page : Form
     {
-        public Home_page()
+        private Account loginthongtin;
+         
+        public Account Loginthongtin
+        {
+            get { return loginthongtin; }
+            set { loginthongtin = value; }
+            
+        }
+
+        public Home_page(Account acc,string group)
         {
             InitializeComponent();
-            load_tt();
+            this.Loginthongtin = acc;
+            load_thongtin();
+            
+            ChangeThongTin(group);
         }
-        private void load_tt()
+      void ChangeThongTin(string group)
         {
-
-           
+            if (group == "Admin")
+            {
+                quantrivien.Enabled=true;
+                taobode.Enabled = true;
+            }
+            else if (group == "Teacher")
+            {
+                quantrivien.Enabled = false;
+                taobode.Enabled = true;
+            }
+            else
+            {
+                quantrivien.Enabled = false;
+                taobode.Enabled = false;
+            }
+            
+        }
+        void load_thongtin()
+        {
+            lbTen.Text = loginthongtin.Name;
+            lbNgaySinh.Text = loginthongtin.Ngaysinh;
         }
         private void Home_page_Load(object sender, EventArgs e)
         {
@@ -30,7 +62,7 @@ namespace DoAnTracNghiem
 
         private void thongTinCaNhanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThongTinCaNhan f = new ThongTinCaNhan();
+            ThongTinCaNhan f = new ThongTinCaNhan(loginthongtin);
             f.Show();
         }
 

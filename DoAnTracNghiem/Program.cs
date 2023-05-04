@@ -16,7 +16,7 @@ namespace DoAnTracNghiem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BangDieuKhien());
+            Application.Run(new QuanTriVien());
         }
     }
 }

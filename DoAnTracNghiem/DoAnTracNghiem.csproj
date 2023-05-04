@@ -54,10 +54,10 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\MaHoa.cs" />
     <Compile Include="DAO\NganHangDeThiDAO.cs" />
     <Compile Include="DTO\CauHoi.cs" />
     <Compile Include="DTO\Account.cs" />
-    <Compile Include="DTO\ThongTin.cs" />
     <Compile Include="QuanTriVien.cs">
       <SubType>Form</SubType>
     </Compile>

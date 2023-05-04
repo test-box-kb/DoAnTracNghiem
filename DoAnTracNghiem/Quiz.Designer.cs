@@ -37,11 +37,11 @@ namespace DoAnTracNghiem
             this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.quảnTrịViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quantrivien = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tạoBộĐềToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taobode = new System.Windows.Forms.ToolStripMenuItem();
             this.NHDT = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNgaySinh = new System.Windows.Forms.Label();
@@ -119,21 +119,21 @@ namespace DoAnTracNghiem
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnTrịViênToolStripMenuItem,
+            this.quantrivien,
             this.thôngTinToolStripMenuItem,
-            this.tạoBộĐềToolStripMenuItem});
+            this.taobode});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(800, 28);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // quảnTrịViênToolStripMenuItem
+            // quantrivien
             // 
-            this.quảnTrịViênToolStripMenuItem.Name = "quảnTrịViênToolStripMenuItem";
-            this.quảnTrịViênToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
-            this.quảnTrịViênToolStripMenuItem.Text = "Quản Trị Viên";
-            this.quảnTrịViênToolStripMenuItem.Click += new System.EventHandler(this.quảnTrịViênToolStripMenuItem_Click);
+            this.quantrivien.Name = "quantrivien";
+            this.quantrivien.Size = new System.Drawing.Size(111, 24);
+            this.quantrivien.Text = "Quản Trị Viên";
+            this.quantrivien.Click += new System.EventHandler(this.quảnTrịViênToolStripMenuItem_Click);
             // 
             // thôngTinToolStripMenuItem
             // 
@@ -158,18 +158,18 @@ namespace DoAnTracNghiem
             this.thoátToolStripMenuItem.Text = "Đăng Xuất";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoatToolStripMenuItem_Click);
             // 
-            // tạoBộĐềToolStripMenuItem
+            // taobode
             // 
-            this.tạoBộĐềToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.taobode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NHDT});
-            this.tạoBộĐềToolStripMenuItem.Name = "tạoBộĐềToolStripMenuItem";
-            this.tạoBộĐềToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
-            this.tạoBộĐềToolStripMenuItem.Text = "Tạo Bộ Đề";
+            this.taobode.Name = "taobode";
+            this.taobode.Size = new System.Drawing.Size(93, 24);
+            this.taobode.Text = "Tạo Bộ Đề";
             // 
             // NHDT
             // 
             this.NHDT.Name = "NHDT";
-            this.NHDT.Size = new System.Drawing.Size(215, 26);
+            this.NHDT.Size = new System.Drawing.Size(224, 26);
             this.NHDT.Text = "Ngân Hàng Đề Thi";
             this.NHDT.Click += new System.EventHandler(this.NHDT_Click);
             // 
@@ -465,7 +465,7 @@ namespace DoAnTracNghiem
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip5;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem quảnTrịViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quantrivien;
         private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
@@ -485,7 +485,7 @@ namespace DoAnTracNghiem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ToolStripMenuItem tạoBộĐềToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem taobode;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton radioButton4;

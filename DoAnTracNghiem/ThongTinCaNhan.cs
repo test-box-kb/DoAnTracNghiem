@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAnTracNghiem.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,25 @@ namespace DoAnTracNghiem
 {
     public partial class ThongTinCaNhan : Form
     {
-        public ThongTinCaNhan()
+        private Account loginthongtin;
+
+        public Account Loginthongtin
+        {
+            get { return loginthongtin; }
+            set { loginthongtin = value; ChangeThongTin(loginthongtin); }
+
+        }
+        public ThongTinCaNhan(Account acc)
         {
             InitializeComponent();
+            loginthongtin = acc;
+            ChangeThongTin(acc);
         }
-
+        void ChangeThongTin(Account acc)
+        {
+            tnd.Text = acc.Name;
+            email.Text = acc.Email;
+        }
         private void ThongTinCaNhan_Load(object sender, EventArgs e)
         {
 
@@ -25,6 +40,15 @@ namespace DoAnTracNghiem
         private void ttcnthoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        void updateAccount()
+        {
+            string name = tnd.Text;
+            string password = ttcnMatKhauCu.Text;
+        }
+        private void ttcncapnhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
