@@ -1,4 +1,5 @@
-﻿using DoAnTracNghiem.DTO;
+﻿using DoAnTracNghiem.DAO;
+using DoAnTracNghiem.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace DoAnTracNghiem
             tnd.Text = acc.Name;
             email.Text = acc.Email;
         }
+        
         private void ThongTinCaNhan_Load(object sender, EventArgs e)
         {
 
@@ -44,11 +46,29 @@ namespace DoAnTracNghiem
         void updateAccount()
         {
             string name = tnd.Text;
-            string password = ttcnMatKhauCu.Text;
+            string password = MaHoa.Instance.HashCodeEnCryp(ttcnMatKhauCu.Text);
+            string newpassword = ttcnMatKhauMoi.Text;
+            string confirmpassword = ttcnNhapLaiMatKhau.Text;
+            string email = loginthongtin.Email;
+            if(!confirmpassword.Equals(newpassword))
+            {
+                label6.Text = "mat khau moi khong trung khop";
+                label6.ForeColor = Color.Red;
+            }else  
+            if (AccountDAO.Instance.UpdateAccount(email, name, password, MaHoa.Instance.HashCodeEnCryp(newpassword)))
+                {
+                    label6.Text = "cap nhat thanh cong";
+                label6.ForeColor = Color.Red;
+            }
+            else
+            {
+                label6.Text = "vui long dien dung mat khau";
+                label6.ForeColor = Color.Red;
+            }
         }
         private void ttcncapnhat_Click(object sender, EventArgs e)
         {
-
+            updateAccount();
         }
     }
 }

@@ -67,5 +67,17 @@ namespace DoAnTracNghiem.DAO
 
             return plainText;
         }
+        public string HashCodeEnCryp(string pass)
+        {
+            string password = "kieubao";
+            byte[] iv = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            SHA256 sHA256 = SHA256Managed.Create();
+            byte[] key = sHA256.ComputeHash(Encoding.ASCII.GetBytes(password));
+            string hashcode = hashstring(pass, "SHA512");
+            hashstring(password, "SHA512");
+            string encrypted = MaHoa.Instance.EncryptString(hashcode, key, iv);
+            hashcode = encrypted;
+           return hashcode;
+        }
     }
 }

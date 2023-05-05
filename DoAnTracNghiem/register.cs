@@ -43,11 +43,7 @@ namespace DoAnTracNghiem
             string email = rgemail.Text;
             string date = rgdob.Text;
             string ChucVu = cbposition.Text;
-            string password = "kieubao";
-            byte[] iv = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            SHA256 sHA256 = SHA256Managed.Create();
-            byte[] key = sHA256.ComputeHash(Encoding.ASCII.GetBytes(password));
-            string hashcode = MaHoa.Instance.hashstring(pass, "SHA512");
+            
 
 
             SqlConnection conn = new SqlConnection();
@@ -71,8 +67,7 @@ namespace DoAnTracNghiem
             }
             else if(rgpass.Text==cfpass.Text&&expr.IsMatch(email))
             {
-                string encrypted = MaHoa.Instance.EncryptString(hashcode, key, iv);
-                hashcode = encrypted;
+                String hashcode = MaHoa.Instance.HashCodeEnCryp(pass);
                 conn.Close();
                 conn.Open();
                 sql = "insert into Users (name,password,email,ngaysinh,ChucVu) values " + "(N'" + hoten + "',N'" + hashcode + "',N'" + email + "',N'"+ date + "',N'" + ChucVu + "')";

@@ -52,14 +52,7 @@ namespace DoAnTracNghiem
         {
             string email = tuser.Text;
             string pass = tpass.Text;
-            string password = "kieubao";
-            byte[] iv = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            SHA256 sHA256 = SHA256Managed.Create();
-            byte[] key = sHA256.ComputeHash(Encoding.ASCII.GetBytes(password));
-            string hashcode = MaHoa.Instance.hashstring(pass, "SHA512");
-            MaHoa.Instance.hashstring(password, "SHA512");
-            string encrypted = MaHoa.Instance.EncryptString(hashcode, key, iv);
-            hashcode = encrypted;
+            string hashcode = MaHoa.Instance.HashCodeEnCryp(pass);
             
             if (login(email, hashcode ))
             {

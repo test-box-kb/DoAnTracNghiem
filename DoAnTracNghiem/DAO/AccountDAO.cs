@@ -48,5 +48,10 @@ namespace DoAnTracNghiem.DAO
             }
             return null;
         }
+        public bool UpdateAccount(string email , string name , string password , string newpassword)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @email , @name , @password , @newpassword",new object[]{email,name,password,newpassword });
+            return result > 0;
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace DoAnTracNghiem
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.QuizDe = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@ namespace DoAnTracNghiem
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.chondapan = new System.Windows.Forms.Button();
+            this.tbstt = new System.Windows.Forms.TextBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -147,14 +150,14 @@ namespace DoAnTracNghiem
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thongTinCaNhanToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.thoátToolStripMenuItem.Text = "Đăng Xuất";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoatToolStripMenuItem_Click);
             // 
@@ -169,7 +172,7 @@ namespace DoAnTracNghiem
             // NHDT
             // 
             this.NHDT.Name = "NHDT";
-            this.NHDT.Size = new System.Drawing.Size(224, 26);
+            this.NHDT.Size = new System.Drawing.Size(215, 26);
             this.NHDT.Text = "Ngân Hàng Đề Thi";
             this.NHDT.Click += new System.EventHandler(this.NHDT_Click);
             // 
@@ -248,27 +251,29 @@ namespace DoAnTracNghiem
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "De1"});
             this.comboBox1.Location = new System.Drawing.Point(111, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 24);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.listView1);
+            this.panel3.Controls.Add(this.QuizDe);
             this.panel3.Location = new System.Drawing.Point(12, 102);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(557, 321);
             this.panel3.TabIndex = 8;
             // 
-            // listView1
+            // QuizDe
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(11, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(541, 285);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.QuizDe.AutoScroll = true;
+            this.QuizDe.Location = new System.Drawing.Point(3, 3);
+            this.QuizDe.Name = "QuizDe";
+            this.QuizDe.Size = new System.Drawing.Size(551, 315);
+            this.QuizDe.TabIndex = 0;
             // 
             // panel5
             // 
@@ -334,6 +339,9 @@ namespace DoAnTracNghiem
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.button4);
+            this.panel6.Controls.Add(this.chondapan);
+            this.panel6.Controls.Add(this.tbstt);
             this.panel6.Controls.Add(this.radioButton4);
             this.panel6.Controls.Add(this.radioButton3);
             this.panel6.Controls.Add(this.radioButton2);
@@ -345,6 +353,36 @@ namespace DoAnTracNghiem
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(225, 302);
             this.panel6.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(144, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(78, 40);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Reload";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // chondapan
+            // 
+            this.chondapan.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.chondapan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chondapan.Location = new System.Drawing.Point(3, 253);
+            this.chondapan.Name = "chondapan";
+            this.chondapan.Size = new System.Drawing.Size(93, 46);
+            this.chondapan.TabIndex = 9;
+            this.chondapan.Text = "Chọn Đáp Án";
+            this.chondapan.UseVisualStyleBackColor = false;
+            // 
+            // tbstt
+            // 
+            this.tbstt.Location = new System.Drawing.Point(82, 3);
+            this.tbstt.Multiline = true;
+            this.tbstt.Name = "tbstt";
+            this.tbstt.Size = new System.Drawing.Size(56, 39);
+            this.tbstt.TabIndex = 8;
             // 
             // radioButton4
             // 
@@ -395,7 +433,7 @@ namespace DoAnTracNghiem
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(110, 0);
+            this.button3.Location = new System.Drawing.Point(144, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 40);
             this.button3.TabIndex = 3;
@@ -406,7 +444,7 @@ namespace DoAnTracNghiem
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 3);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 40);
             this.button1.TabIndex = 2;
@@ -417,13 +455,12 @@ namespace DoAnTracNghiem
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(64, 247);
+            this.button2.Location = new System.Drawing.Point(129, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 46);
             this.button2.TabIndex = 1;
             this.button2.Text = "Nộp";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Home_page
             // 
@@ -438,7 +475,6 @@ namespace DoAnTracNghiem
             this.Controls.Add(this.menuStrip2);
             this.Name = "Home_page";
             this.Text = "Quiz";
-            this.Load += new System.EventHandler(this.Home_page_Load);
             this.contextMenuStrip3.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
@@ -486,7 +522,6 @@ namespace DoAnTracNghiem
         private System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem taobode;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -496,5 +531,9 @@ namespace DoAnTracNghiem
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem NHDT;
+        private System.Windows.Forms.FlowLayoutPanel QuizDe;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button chondapan;
+        private System.Windows.Forms.TextBox tbstt;
     }
 }

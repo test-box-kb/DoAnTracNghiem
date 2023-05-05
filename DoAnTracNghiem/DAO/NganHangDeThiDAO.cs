@@ -29,5 +29,17 @@ namespace DoAnTracNghiem.DAO
             }
             return ListCauHoi;
         }
+        public List<CauHoi> LoadCauHoiKiemTra()
+        {
+            List<CauHoi> ListCauHoi = new List<CauHoi>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from De1");
+
+            foreach (DataRow item in data.Rows)
+            {
+                CauHoi cauhoi = new CauHoi(item);
+                ListCauHoi.Add(cauhoi);
+            }
+            return ListCauHoi;
+        }
     }
 }

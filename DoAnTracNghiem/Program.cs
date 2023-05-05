@@ -16,7 +16,7 @@ namespace DoAnTracNghiem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanTriVien());
+            Application.Run(new Login());
         }
     }
 }
