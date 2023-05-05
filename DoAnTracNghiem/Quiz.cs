@@ -20,21 +20,21 @@ namespace DoAnTracNghiem
         {
             get { return loginthongtin; }
             set { loginthongtin = value; }
-            
+
         }
-        public Home_page(Account acc,string group)
+        public Home_page(Account acc, string group)
         {
             InitializeComponent();
             this.Loginthongtin = acc;
             load_thongtin();
-            
+
             ChangeThongTin(group);
         }
-      void ChangeThongTin(string group)
+        void ChangeThongTin(string group)
         {
             if (group == "Admin")
             {
-                quantrivien.Enabled=true;
+                quantrivien.Enabled = true;
                 taobode.Enabled = true;
             }
             else if (group == "Teacher")
@@ -47,7 +47,7 @@ namespace DoAnTracNghiem
                 quantrivien.Enabled = false;
                 taobode.Enabled = false;
             }
-            
+
         }
         void load_thongtin()
         {
@@ -79,12 +79,13 @@ namespace DoAnTracNghiem
         }
 
 
-        
+
         void loadcauhoi()
         {
-            List<CauHoi> ListCauHoi = NganHangDeThiDAO.Instance.LoadCauHoiKiemTra();
+            List<TraLoiCauHoi> ListCauHoi = NganHangDeThiDAO.Instance.LoadCauHoiKiemTra();
 
-            foreach (CauHoi item in ListCauHoi)
+
+            foreach (TraLoiCauHoi item in ListCauHoi)
             {
 
                 Label pen = new Label() { Width = 440 };
@@ -95,13 +96,13 @@ namespace DoAnTracNghiem
                 stt.Text = "" + item.Stt;
                 Label noidungcauhoi = new Label();
                 noidungcauhoi.Text = "Nội Dung Câu hỏi: " + item.Noidungcauhoi;
-                Label a = new Label();
+                Label a = new Label() { Width = 440 };
                 a.Text = "Đáp Án A: " + item.A;
-                Label b = new Label();
+                Label b = new Label() { Width = 440 };
                 b.Text = "Đáp Án B: " + item.B;
-                Label c = new Label();
+                Label c = new Label() { Width = 440 };
                 c.Text = "Đáp Án C: " + item.C;
-                Label d = new Label();
+                Label d = new Label() { Width = 440 };
                 d.Text = "Đáp Án D: " + item.D;
                 QuizDe.Controls.Add(pen);
                 QuizDe.Controls.Add(stt);
@@ -113,13 +114,68 @@ namespace DoAnTracNghiem
             }
 
         }
-
+       
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.Text=="De1")
+            if (comboBox1.Text == "De1")
             {
                 loadcauhoi();
-            }    
+            }
+        }
+        List<TraLoiCauHoi> ListCauHoikho = NganHangDeThiDAO.Instance.LoadCauHoiKiemTra();
+        private void check_cauhoi()
+        {
+            
+            int stt = Int32.Parse(tbstt.Text) - 1;
+            if (stt > 0 && stt <= 10)
+            {
+                TraLoiCauHoi hientai = ListCauHoikho[stt-1];
+                if (radioButton1.Checked == true)
+                {
+                    if (hientai.A == hientai.Answer)
+                        hientai.Dachon = true;
+
+                }
+                else if (radioButton2.Checked == true)
+                {
+                    if (hientai.B == hientai.Answer)
+                        hientai.Dachon = true;
+
+                }
+                else if (radioButton3.Checked == true)
+                {
+                    if (hientai.C == hientai.Answer)
+                        hientai.Dachon = true;
+
+                }
+                else if (radioButton4.Checked == true)
+                {
+                    if (hientai.D == hientai.Answer)
+                        hientai.Dachon = true;
+                }
+            }
+        }
+        private double check_diem()
+        {
+            double diem = 0;
+            foreach(TraLoiCauHoi item in ListCauHoikho)
+            {
+                if (item.Dachon)
+                    diem++;
+            }
+            return diem;
+        }
+
+        private void chondapan_Click(object sender, EventArgs e)
+        {
+            check_cauhoi();
+            MessageBox.Show("Chon Dap An Thanh Cong");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label7.Text = check_diem().ToString();
+           label10.Text = check_diem().ToString();
         }
     }
 }

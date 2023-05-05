@@ -29,14 +29,14 @@ namespace DoAnTracNghiem.DAO
             }
             return ListCauHoi;
         }
-        public List<CauHoi> LoadCauHoiKiemTra()
+        public List<TraLoiCauHoi> LoadCauHoiKiemTra()
         {
-            List<CauHoi> ListCauHoi = new List<CauHoi>();
+            List<TraLoiCauHoi> ListCauHoi = new List<TraLoiCauHoi>();
             DataTable data = DataProvider.Instance.ExecuteQuery("Select * from De1");
 
             foreach (DataRow item in data.Rows)
             {
-                CauHoi cauhoi = new CauHoi(item);
+                TraLoiCauHoi cauhoi = new TraLoiCauHoi(item);
                 ListCauHoi.Add(cauhoi);
             }
             return ListCauHoi;

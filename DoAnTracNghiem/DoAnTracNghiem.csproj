@@ -58,6 +58,7 @@
     <Compile Include="DAO\NganHangDeThiDAO.cs" />
     <Compile Include="DTO\CauHoi.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\TraLoiCauHoi.cs" />
     <Compile Include="QuanTriVien.cs">
       <SubType>Form</SubType>
     </Compile>

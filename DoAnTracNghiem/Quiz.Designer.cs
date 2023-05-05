@@ -315,7 +315,7 @@ namespace DoAnTracNghiem
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 23);
             this.label8.TabIndex = 8;
-            this.label8.Text = "/20";
+            this.label8.Text = "/10";
             // 
             // label7
             // 
@@ -339,6 +339,7 @@ namespace DoAnTracNghiem
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.Controls.Add(this.button4);
             this.panel6.Controls.Add(this.chondapan);
             this.panel6.Controls.Add(this.tbstt);
@@ -375,13 +376,14 @@ namespace DoAnTracNghiem
             this.chondapan.TabIndex = 9;
             this.chondapan.Text = "Chọn Đáp Án";
             this.chondapan.UseVisualStyleBackColor = false;
+            this.chondapan.Click += new System.EventHandler(this.chondapan_Click);
             // 
             // tbstt
             // 
-            this.tbstt.Location = new System.Drawing.Point(82, 3);
+            this.tbstt.Location = new System.Drawing.Point(96, 6);
             this.tbstt.Multiline = true;
             this.tbstt.Name = "tbstt";
-            this.tbstt.Size = new System.Drawing.Size(56, 39);
+            this.tbstt.Size = new System.Drawing.Size(35, 34);
             this.tbstt.TabIndex = 8;
             // 
             // radioButton4
@@ -461,11 +463,13 @@ namespace DoAnTracNghiem
             this.button2.TabIndex = 1;
             this.button2.Text = "Nộp";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Home_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
